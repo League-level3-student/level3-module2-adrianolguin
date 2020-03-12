@@ -7,10 +7,14 @@ import org.junit.jupiter.api.Test;
 class _04_SearchTest {
 
 	// A MINIMUM OF 3 TESTS ARE REQUIRED FOR EACH METHOD
-	
+	_00_LinearSearch linearSearch = new _00_LinearSearch();
 	@Test
 	public void testLinearSearch() {
 		//1. use the assertEquals method to test your linear search method.
+		String[] array = new String[] {"0","1","37","9","20"};		
+		assertEquals(linearSearch.linearSearch(array, "37"), 2);
+		assertEquals(linearSearch.linearSearch(array, "0"), 0);
+		assertEquals(linearSearch.linearSearch(array, "20"), 4);
 	}
 
 	@Test

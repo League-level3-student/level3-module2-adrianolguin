@@ -35,6 +35,7 @@ public class HeapSorter extends Sorter {
 	}
 	
 	public void heapSort(int[] array, int n, int i, SortingVisualizer display) {
+		display.updateDisplay();
 		//2. create an integer called largest and set it equal to i
 		int largest = i;
 		//3. create an integer called l and set it equal to 2 * i + 1
@@ -57,9 +58,9 @@ public class HeapSorter extends Sorter {
         //   then swap the array elements at i and largest.
         //   Also, call the heapSort method with n and largest
         if(largest != i) {
-        	int temp = i;
-        	i = largest;
-        	largest = temp;
+        	int temp = array[i];
+        	array[i] = array[largest];
+        	array[largest] = temp;
         	heapSort(array, n, largest, display);
         }
 	}

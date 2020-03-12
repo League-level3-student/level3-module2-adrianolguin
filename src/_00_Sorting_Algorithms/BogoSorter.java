@@ -22,10 +22,12 @@ public class BogoSorter extends Sorter {
 	void sort(int[] array, SortingVisualizer display) {
 		Random r = new Random();
 		while (!intArraySorted(array)) {
-			int temp1 = array[r.nextInt(array.length)];
-			int temp2 = array[r.nextInt(array.length)];
-			array[temp1] = array[temp2];
-			array[temp2] = array[temp1];
+			display.updateDisplay();
+			int index1 = r.nextInt(array.length-1);
+			int index2 = r.nextInt(array.length-1);
+			int temp = array[index1];
+			array[index1] = array[index2];
+			array[index2] = temp;
 		}
 	}
 
